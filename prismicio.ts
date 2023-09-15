@@ -26,6 +26,7 @@ export const createClient = (config: prismicNext.CreateClientConfig = {}) => {
     routes,
     fetchOptions: { next: { revalidate: 60 } },
     ...config,
+    accessToken: 'MC5aUVFXcGhJQUFDVUFsNUFl.UO-_vQZp77-977-977-977-9NVDvv71977-9e--_vQtqU--_vXgMcO-_vWDvv71b77-977-9Gw9IOA'
   });
 
   prismicNext.enableAutoPreviews({
