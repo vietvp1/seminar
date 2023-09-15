@@ -18,10 +18,5 @@ export async function generateStaticParams() {
 export default async function Product({ params: { slug } }: Props) {
   const client = createClient();
   const a = await client.getSingle("homepage");
-  return (
-    <div>
-      {slug}
-      <ProductPage a={a} />
-    </div>
-  );
+  return <ProductPage a={a} slug={slug} />;
 }

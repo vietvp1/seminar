@@ -1,9 +1,9 @@
-import React from 'react'
+"use client";
+import { useState } from "react";
 
 const ProductPage = (props: any) => {
-  return (
-    <div>ProductPage {props.a.data.title}</div>
-  )
-}
+  const [first, setfirst] = useState(0);
+  return <div>ProductPage {props.slug} {props.a.data.title}</div>;
+};
 
-export default ProductPage
+export default ProductPage;

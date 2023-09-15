@@ -12,6 +12,7 @@ export default async function RootLayout({
 }) {
   const client = createClient();
   const a = await client.getSingle("homepage");
+  console.log('a', a)
   return (
     <html lang="en">
       <body>{children}</body>
