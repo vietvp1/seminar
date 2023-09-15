@@ -11,7 +11,6 @@ export default async function RootLayout({
   children: React.ReactNode;
 }) {
   const { mainLayoutData, subData, menuDataDump } = await getLayoutData()
-  console.log({ mainLayoutData, subData, menuDataDump })
   console.log('log')
   return (
     <html lang="en">

@@ -9,7 +9,7 @@ export const revalidate = 60;
 
 export async function generateStaticParams() {
   const products = [];
-  for (let i = 0; i < 300; i++) {
+  for (let i = 0; i < 1000; i++) {
     products.push({ slug: `slug-${i}` });
   }
   return products;
