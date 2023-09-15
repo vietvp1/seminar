@@ -1,6 +1,0 @@
-{
-  "_latest": "0.7.1",
-  "apiEndpoint": "https://vietvp1.prismic.io/api/v2",
-  "localSliceSimulatorURL": "http://localhost:3000/slice-simulator",
-  "libraries": ["@/slices"]
-}

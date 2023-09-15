@@ -1,27 +1,19 @@
 import * as prismic from "@prismicio/client";
 import * as prismicNext from "@prismicio/next";
-import sm from "./sm.json";
-
-export const endpoint = sm.apiEndpoint;
+import config from "./slicemachine.config.json";
 
 /**
  * The project's Prismic repository name.
  */
-export const repositoryName = prismic.getRepositoryName(endpoint);
+export const repositoryName = config.repositoryName;
 
 /**
- * A list of Route Resolver objects that define how a document's `url` field
- * is resolved.
+ * A list of Route Resolver objects that define how a document's `url` field is resolved.
  *
  * {@link https://prismic.io/docs/route-resolver#route-resolver}
  */
 // TODO: Update the routes array to match your project's route structure.
-const routes: prismic.ClientConfig["routes"] = [
-  // {
-  //   type: 'homepage',
-  //   path: '/',
-  // },
-];
+const routes: prismic.ClientConfig["routes"] = [];
 
 /**
  * Creates a Prismic client for the project's repository. The client is used to
@@ -32,9 +24,8 @@ const routes: prismic.ClientConfig["routes"] = [
 export const createClient = (config: prismicNext.CreateClientConfig = {}) => {
   const client = prismic.createClient(repositoryName, {
     routes,
+    fetchOptions: { next: { revalidate: 60 } },
     ...config,
-    accessToken:
-      "MC5aUVFIR2hJQUFDTUFsM2I5.77-9Innvv73vv70TL--_ve-_vSfvv71l77-9SO-_vXJpU--_vWFrW0bvv71zWCbvv73vv71J77-9UA",
   });
 
   prismicNext.enableAutoPreviews({
