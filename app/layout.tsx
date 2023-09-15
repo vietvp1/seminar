@@ -1,4 +1,4 @@
-import { createClient } from "@/prismicio";
+import getLayoutData from "./helper";
 
 export const metadata = {
   title: "Create Next App",
@@ -10,9 +10,9 @@ export default async function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const client = createClient();
-  const a = await client.getSingle("homepage");
-  console.log('logggggggggggg')
+  const { mainLayoutData, subData, menuDataDump } = await getLayoutData()
+  console.log({ mainLayoutData, subData, menuDataDump })
+  console.log('log')
   return (
     <html lang="en">
       <body>{children}</body>

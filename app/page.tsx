@@ -5,6 +5,6 @@ export const revalidate = 60;
 
 export default async function Page() {
   const client = createClient()
-  const a = await client.getSingle('homepage')
+  const a = await client.getSingle('home-page')
   return <HomePage a={a}/>;
 }

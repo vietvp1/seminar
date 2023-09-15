@@ -9,7 +9,7 @@ export const revalidate = 60;
 
 export async function generateStaticParams() {
   const products = [];
-  for (let i = 0; i < 1000; i++) {
+  for (let i = 0; i < 300; i++) {
     products.push({ slug: `slug-${i}` });
   }
   return products;
@@ -17,6 +17,6 @@ export async function generateStaticParams() {
 
 export default async function Product({ params: { slug } }: Props) {
   const client = createClient();
-  const a = await client.getSingle("homepage");
+  const a = await client.getSingle("home-page");
   return <ProductPage a={a} slug={slug} />;
 }
