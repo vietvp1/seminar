@@ -1,12 +1,20 @@
 "use client";
 
-import { useSearchParams } from "next/navigation";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
 
 const HomePage = () => {
   const [data, setData] = useState<any[]>([]);
   const searchParams = useSearchParams();
-  console.log('searchParams :>> ', searchParams);
+  const router = useRouter();
+  const pathname = usePathname();
+  console.log("searchParams :>> ", pathname);
+  const q = searchParams?.get("q") || "";
+
+  useEffect(() => {
+    console.log(q);
+  }, [q]);
+
   useEffect(() => {
     console.log("HomePage client side");
     const fetchData = async function () {
