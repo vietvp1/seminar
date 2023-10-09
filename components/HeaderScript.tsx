@@ -9,14 +9,14 @@ const HeaderScript: FC = () => {
         src="https://storage.googleapis.com/tagalys-front-end-components/tagalys-api-connector-1.3.2.min.js"
         type="text/javascript"
         strategy="beforeInteractive"
-      />
+      ></Script>
 
       {/* Preezie guide */}
       <Script
         type="text/javascript"
         src="https://preeziecdn.azureedge.net/production/preguide.min.js"
         strategy="beforeInteractive"
-      />
+      ></Script>
     </>
   );
 };
