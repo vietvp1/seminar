@@ -2,6 +2,7 @@
 
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
+import withSuppense from "./withSuppense";
 
 const HomePage = () => {
   const [data, setData] = useState<any[]>([]);
@@ -39,4 +40,4 @@ const HomePage = () => {
   );
 };
 
-export default HomePage;
+export default withSuppense(HomePage);
