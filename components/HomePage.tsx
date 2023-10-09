@@ -1,9 +1,12 @@
 "use client";
 
+import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
 
 const HomePage = () => {
   const [data, setData] = useState<any[]>([]);
+  const searchParams = useSearchParams();
+  console.log('searchParams :>> ', searchParams);
   useEffect(() => {
     console.log("HomePage client side");
     const fetchData = async function () {
@@ -19,7 +22,9 @@ const HomePage = () => {
       HomePage Okeeeeeeee
       <div>
         {data.map((item, i) => (
-          <div style={{border: 'solid 1px lightgray'}} key={i}>{item.title}</div>
+          <div style={{ border: "solid 1px lightgray" }} key={i}>
+            {item.title}
+          </div>
         ))}
       </div>
     </div>
